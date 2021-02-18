@@ -38,5 +38,73 @@
 - Sequelize
   - Node에서 사용하는 ORM
   - query문을 사용하지 않음
-  
+- Sequelize 기본 세팅
+  - config 폴더 안의 config.json을 만들어 설정해 줌
+    - developement 사용
+    - database : 사용할 스키마
+    - host : DB의 주소
+    - dialect : 사용할 DB 주소
+- Sequelize 명령어
+  - npx sequelize-cli db:create
+    - DB(Schema) 생성하는 명령어
+    - config.json의 database 명칭대로 database 생성
+  - npx sequelize-cli model:generate --name ${table이름} --attributes ${column이름}:${변수형},...
+    - 모델 생성 명령어
+    - attribute 띄어쓰기 X
+    - ex) npx sequelize-cli model:generate --name user --attributes firstName:string,lastName:string
+  - npx sequelize-cli db:migrate --env development
+    - 모델의 내용을 DB로 옮기는 명령어
+  - npx sequelize-cli seed:generate --name ${table이름}
+    - 데이터를 입력할 seeders 파일 생성
+  - npx sequelize-cli db:seed:all
+    - 입력한 데이터를 Table로 옮김
+- 실습4 : [index.js](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/004.sequelizer/index.js), [seeders_order_list.js](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/004.sequelizer/seeders/20210218061211-order_list.js), [migration_create_order-lists.js](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/004.sequelizer/migrations/20210218060930-create-order-list.js)
+  - ORDER_LIST 생성하기
+    - column : item(string), type(string)
+    - 임의의 데이터 삽입
+    - get, post, patch, delete(REST API) 기능
+  - get
+    ![캡처_1_](https://user-images.githubusercontent.com/50474972/108370597-30f88980-7240-11eb-8c49-badb30668b7c.JPG)
+  - post    
+    ![캡처_2_](https://user-images.githubusercontent.com/50474972/108370601-3229b680-7240-11eb-9db6-ac892b96f4a4.JPG)
+  - put    
+    ![캡처_3_](https://user-images.githubusercontent.com/50474972/108370608-335ae380-7240-11eb-9b57-942451260e71.JPG)
+  - patch    
+    ![캡처_4_](https://user-images.githubusercontent.com/50474972/108370613-33f37a00-7240-11eb-8918-02d65f990a35.JPG)
+    
+### 파일 업로드
+- 파일 전송
+  - 이미지, 동영상 등은 형태, 쓰임새와 상관없이 모두 파일임
+  - 0, 1로 구성
+- File은 0과 1로 구성된 대량의 변수값을 보내는 것
+- 데이터 전송 시 인코딩 방법(Form Enctype)
+  - application/x-www-form-urlencoded
+  - multipart/form-data
+  - text/plain
+
+### Multer Library
+- HTTP Header
+  - 클라이언트와 서버가 요청, 응답으로 부가적인 정보를 전송할 수 있게 해줌(압축, 인증, 캐시 등)
+  - Content-Type
+    - 표현 데이터의 형식에 대해서 나타냄
+    - text/html; charset=utf-8
+    - application/json
+  - Content-Disposition
+    - 컨텐츠의 기질/성향을 알려줌
+    - 파일 다운로드를 처리하는 헤더
+- Multer
+  - 파일 업로드를 위한 Node.js 미들웨어
+    - multipart/form-data를 처리하기 위한 라이브러리
+- fs
+  - stream
+    - readFile은 파일 전체를 메모리에 올리기 떄문에 메모리 사용량이 큼
+    - 큰 데이터를 가져올 때나 외부 소스로부터 한번씩 나눠 가져올 때 유용
+  - createReadStream
+    - 전체 파일을 지정한 크기의 chunk로 읽음
+- adm-zip
+  - 파일을 손쉽게 압축, 압축 풀기 할 수 있는 라이브러리
+- 실습5 : [index.js](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/005.multer/index.js), [views_index.ejs](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/005.multer/views/index.ejs)
+  - 파일을 다양한 방식을 통해 upload 및 download-
+
+    
   
