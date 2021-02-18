@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+</head>
+<body>
+    <!-- 일반 파일 업로드 -->
+    <form method="POST" enctype="multipart/form-data" action="./upload">
+        <input type="file" name="userfile">
+        <input type="submit" value="전송하기">
+    </form>
+
+    <br/>
+    <br/>
+    <hr/>
+
+    <!-- 여러 파일 업로드 -->
+    <form method="POST" enctype="multipart/form-data" action="./upload-multiple">
+        <input type="file" name="many" multiple>
+        <input type="file" name="many" multiple>
+        <input type="submit" value="전송하기">
+    </form>
+
+    <br/>
+    <br/>
+    <hr/>
+
+    <form method="POST" enctype="multipart/form-data" action="./upload-multiple-fields">
+        <input type="file" name="file1"/>
+        <input type="file" name="file2"/>
+        <input type="text" name="title"/>
+        <input type="submit" value="전송하기">
+    </form>        
+
+    <br/>
+    <br/>
+    <hr/>
+
+    <a href="/download">download</a>
+
+    <br/>
+    <hr/>
+
+    <a href="/download-multiple">download_zip</a>
+
+    <br/>
+    <hr/>
+
+</body>
+</html>
