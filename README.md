@@ -4,7 +4,7 @@
 - mysql2
   - mysql1버전에서 2로 변경됨
   - prmoise 방식을 리턴 받을 수 있는 node의 mysql 라이브러리
-- [실습1](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/001.database/index.js)
+>> [실습1](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/001.database/index.js)
   - mysql관련된 파일은 mysql폴더 안의 index.js를 만들어 설정을 해 줌
     - user : 해당 스키마에 권한이 부여된, 사용할 ID
     - database : 사용할 스키마(데이터베이스)
@@ -14,7 +14,8 @@
     ` 미들웨어의 여러 옵션 중에 하나
     - false 값일 시, node.js에 기본으로 내장된 queryString를 사용
     - true 값일 시, 따로 설치가 필요한 npm qs 라이브러리를 사용
-- 실습2 : [index.js](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/002.database/index.js), [index.ejs](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/002.database/views/index.ejs)
+ 
+>> 실습2 : [index.js](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/002.database/index.js), [index.ejs](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/002.database/views/index.ejs)
   - DB를 연동하여 할 일 목록을 만드는 작업
   - check box가 체크되었을 시, 해당 작업을 수행 한 것
   - 해당 작업을 추가, 수정, 삭제할 수 있음(DB 반영)
@@ -58,7 +59,7 @@
     - 데이터를 입력할 seeders 파일 생성
   - npx sequelize-cli db:seed:all
     - 입력한 데이터를 Table로 옮김
-- 실습4 : [index.js](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/004.sequelizer/index.js), [seeders_order_list.js](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/004.sequelizer/seeders/20210218061211-order_list.js), [migration_create_order-lists.js](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/004.sequelizer/migrations/20210218060930-create-order-list.js)
+>> 실습4 : [index.js](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/004.sequelizer/index.js), [seeders_order_list.js](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/004.sequelizer/seeders/20210218061211-order_list.js), [migration_create_order-lists.js](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/004.sequelizer/migrations/20210218060930-create-order-list.js)
   - ORDER_LIST 생성하기
     - column : item(string), type(string)
     - 임의의 데이터 삽입
@@ -103,7 +104,7 @@
     - 전체 파일을 지정한 크기의 chunk로 읽음
 - adm-zip
   - 파일을 손쉽게 압축, 압축 풀기 할 수 있는 라이브러리
-- 실습5 : [index.js](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/005.multer/index.js), [views_index.ejs](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/005.multer/views/index.ejs)
+>> 실습5 : [index.js](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/005.multer/index.js), [views_index.ejs](https://github.com/KimUJin3359/Web_NODE_JS-3-/blob/master/005.multer/views/index.ejs)
   - 파일을 다양한 방식을 통해 upload 및 download-
 
     
